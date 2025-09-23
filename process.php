@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize and validate input fields
+
     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
     $fullname = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
 
-    // Basic validations
+ 
     if (!$id) $errors[] = "ID is required.";
     if (!$fullname) $errors[] = "Full Name is required.";
     if (!$email) $errors[] = "A valid Email is required.";
@@ -28,14 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!$license) $errors[] = "Medical License Number is required.";
     if (!$password) $errors[] = "Password is required.";
 
-    // If no errors, process the form
+ 
     if (empty($errors)) {
-        // Hash the password for security
+     
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        // Normally here you would save the data to a database
-        // For now, just display a success message
-
+  
         echo "<h1>Doctor Sign-Up Successful</h1>";
         echo "<p>Thank you, <strong>" . htmlspecialchars($fullname) . "</strong>, for signing up!</p>";
         echo "<ul>";
@@ -49,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "<li>Specialization: " . htmlspecialchars($specialization) . "</li>";
         echo "<li>Medical License: " . htmlspecialchars($license) . "</li>";
         echo "</ul>";
-        // Do NOT display password or hash publicly
+       
     } else {
-        // Show errors
+     
         echo "<h2>Errors in form submission:</h2>";
         echo "<ul>";
         foreach ($errors as $error) {
@@ -61,8 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo '<p><a href="signup.html">Go back to the form</a></p>';
     }
 } else {
-    // Redirect to form if accessed directly
+
     header("Location: signup.html");
     exit();
 }
 ?>
+
