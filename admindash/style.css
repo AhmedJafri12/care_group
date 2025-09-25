@@ -1,0 +1,32 @@
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+    .sidebar.show {
+        margin-left: 0;
+    }
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
+
+.main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.btn-sm { margin: 2px; }
+.table { font-size: 0.9em; }

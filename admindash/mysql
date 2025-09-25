@@ -1,0 +1,40 @@
+CREATE DATABASE hospital_db;
+USE hospital_db;
+
+CREATE TABLE cities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE doctors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    specialty VARCHAR(100) NOT NULL,
+    city_id INT,
+    FOREIGN KEY (city_id) REFERENCES cities(id) ON DELETE SET NULL
+);
+
+CREATE TABLE patients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(20),
+    city_id INT,
+    FOREIGN KEY (city_id) REFERENCES cities(id) ON DELETE SET NULL
+);
+
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT NOT NULL,
+    patient_id INT NOT NULL,
+    appointment_date DATE NOT NULL,
+    status ENUM('scheduled', 'completed', 'cancelled') DEFAULT 'scheduled',
+    FOREIGN KEY (doctor_id) REFERENCES doctors(id) ON DELETE CASCADE,
+    FOREIGN KEY (patient_id) REFERENCES patients(id) ON DELETE CASCADE
+);
+
+-- Sample data
+INSERT INTO cities (name) VALUES ('New York'), ('Los Angeles'), ('Chicago');
+INSERT INTO doctors (name, specialty, city_id) VALUES ('Dr. Smith', 'Cardiology', 1);
+INSERT INTO patients (name, email, phone, city_id) VALUES ('John Doe', 'john@example.com', '123-456-7890', 1);
+INSERT INTO appointments (doctor_id, patient_id, appointment_date) VALUES (1, 1, '2024-01-15');
