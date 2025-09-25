@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>General Medicine | HealthCare Hospital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; }
+
+    /* Navbar */
+    nav { background: rgba(13, 59, 102, 0.9); }
+    nav h1 { font-size: 1.4rem; color: white; margin: 0; }
+    .navbar-nav .nav-link { color: white !important; }
+    .navbar-nav .nav-link:hover { color: #a3c9f5 !important; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: url("https://img.freepik.com/free-photo/modern-hospital-building_1232-3691.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: auto;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.1rem; }
+
+    /* Information Section */
+    .info {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+    .info h2 {
+      text-align: center;
+      color: #0d3b66;
+      margin-bottom: 30px;
+    }
+    .info p {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    /* Doctors */
+    .doctors { padding: 60px 20px; background: #f9fbfc; }
+    .doctors h2 { text-align: center; margin-bottom: 30px; color: #0d3b66; }
+    .doctor {
+      background: #fff; padding: 20px; border-radius: 12px; text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .doctor img {
+      width: 100px; height: 100px; border-radius: 50%; margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact {
+      background: #0d3b66; color: white; text-align: center; padding: 60px 20px;
+    }
+    .contact button {
+      background: white; color: #0d3b66; border: none; padding: 12px 25px;
+      border-radius: 8px; cursor: pointer;
+    }
+    .contact button:hover { background: #ddd; }
+
+    /* Footer */
+    footer {
+      background: #062a4d; color: #ddd; text-align: center; padding: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 80px 15px; }
+      .hero h2 { font-size: 1.6rem; }
+      .hero p { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <h1>🏥 General Medicine</h1>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">General Medicine</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>🩺 GI & Liver Diseases</h2>
+      <p>Comprehensive primary healthcare for adults and families, focusing on prevention, diagnosis, and treatment.</p>
+    </div>
+  </section>
+
+  <!-- Information Section -->
+  <section class="info">
+    <h2>Gastroenterology & Liver Diseases</h2>
+    <p>
+        Gastroenterology and Hepatology (GI & Liver Diseases) is the branch of medicine focused on the diagnosis, treatment, and prevention of conditions affecting the digestive system and liver. <br>
+         includes the esophagus, stomach, intestines, pancreas, gallbladder, and liver.
+    </p>
+    <p>
+        Our GI & Liver Diseases Department specializes in managing a wide range of disorders such as acid reflux, ulcers, irritable bowel syndrome (IBS), inflammatory bowel disease (IBD), hepatitis, fatty liver disease, cirrhosis, and gastrointestinal cancers.
+    </p>
+    <p>
+        At HealthCare Hospital, we provide advanced diagnostic services including endoscopy, colonoscopy, and liver function testing. Our team of expert gastroenterologists and hepatologists ensures accurate evaluation and personalized treatment plans for every patient.
+    </p>
+  </section>
+
+  <!-- Doctors -->
+  <section class="doctors">
+    <h2>Meet Our Physicians</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="doctor">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Doctor">
+          <h5>Dr. Sarah Malik</h5>
+          <p>Senior Consultant, General Medicine</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="doctor">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140050.png" alt="Doctor">
+          <h5>Dr. Ahmed Raza</h5>
+          <p>Specialist in Internal Medicine</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="doctor">
+          <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" alt="Doctor">
+          <h5>Dr. Fatima Javed</h5>
+          <p>Family Physician</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>GI & Liver Diseases </h2>
+    <p>📞 +92 300 9876543 | ✉️ generalmedicine@healthcare.com</p>
+    <button>Book Appointment</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 HealthCare Hospital. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
